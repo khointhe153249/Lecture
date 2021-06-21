@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CheckNumber;
+package BTVN;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author acer
  */
-public class Main {
+public class CheckNumber {
 
     public static Scanner sc = new Scanner(System.in);
 

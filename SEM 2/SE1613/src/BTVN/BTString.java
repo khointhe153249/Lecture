@@ -1,4 +1,4 @@
-package BTString;
+package BTVN;
 
 import java.util.Scanner;
 
