@@ -1,4 +1,4 @@
-package BTVN;
+package HomeWork;
 
 import java.util.Scanner;
 
