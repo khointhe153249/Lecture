@@ -6,7 +6,7 @@
 package DemoString;
 /**
  *
- * @author acer
+ * @author Nguyen Khoi
  */
 public class DemoString {
     public static void main(String[] args) {

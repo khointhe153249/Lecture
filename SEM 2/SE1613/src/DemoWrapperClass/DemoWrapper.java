@@ -7,7 +7,7 @@ package DemoWrapperClass;
 
 /**
  *
- * @author acer
+ * @author Nguyen Khoi
  */
 public class DemoWrapper {
     public static void main(String[] args) {

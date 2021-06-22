@@ -1,2 +1,0 @@
-DemoString.HomeWork
-DemoString.YourHW

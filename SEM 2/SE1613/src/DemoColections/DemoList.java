@@ -11,7 +11,7 @@ import java.util.*;
 
 /**
  *
- * @author acer
+ * @author Nguyen Khoi
  */
 public class DemoList {
     public static void main(String[] args) {

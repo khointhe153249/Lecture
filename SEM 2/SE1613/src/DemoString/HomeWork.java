@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author acer
+ * @author Nguyen Khoi
  */
 class YourHW {
 
