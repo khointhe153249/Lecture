@@ -21,10 +21,9 @@ public class UsingShelf {
         System.out.println("2.Print shelf.");
         System.out.println("3.Search shelf by name.");
         System.out.println("4.Update shelf by name.");
-        System.out.println("5.Remove shelf.");
-        System.out.println("6.Sort shelf by id");
-        System.out.println("7.Remove shelf.");
-        System.out.println("8.Exit FAP");
+        System.out.println("5.Sort shelf by name");
+        System.out.println("6.Remove shelf.");
+        System.out.println("7.Exit FAP");
         System.out.println("---------- Finish ---------");
         System.out.print("Input choice: ");
     }
@@ -70,8 +69,7 @@ public class UsingShelf {
                     }
                     if (flag == 1) {
                         System.out.println("Exist shelf in position " + pos);
-                    }
-                    else {
+                    } else {
                         System.err.println("Shelf Not Found");
                     }
                     break;
@@ -81,13 +79,23 @@ public class UsingShelf {
                     System.out.print("Input name search: ");
                     String name = sc.nextLine();
                     for (int i = 0; i < amount; i++) {
-                        if(s[i].getName().equalsIgnoreCase(name))
+                        if (s[i].getName().equalsIgnoreCase(name)) {
                             s[i].input();
+                        }
                     }
                     break;
                 }
 
                 case 5: {
+                    for (int i = 0; i < amount - 1; i++) {
+                        for (int j = i + 1; j < amount; j++) {
+                            if (s[i].getName().compareTo(s[j].getName()) > 0) {
+                                Shelf tmp = s[i];
+                                s[i] = s[j];
+                                s[j] = tmp;
+                            }
+                        }
+                    }
                     break;
                 }
 
@@ -96,10 +104,8 @@ public class UsingShelf {
                 }
 
                 case 7: {
-                    break;
-                }
-
-                case 8: {
+                    System.out.println("You are exited");
+                    System.exit(0);
                     break;
                 }
             }
