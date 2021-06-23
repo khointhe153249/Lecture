@@ -15,20 +15,39 @@ public class UsingShelf {
 
     public static Scanner sc = new Scanner(System.in);
 
+    public static int amount = 0;
+
+    public static void removeElement(Shelf[] s, int pos) {
+        for (int i = pos; i < amount - 1; i++) {
+            s[i] = s[i + 1];
+        }
+        amount--;
+    }
+    
+    public static void removeElementByName(Shelf []s, String name) {
+        for (int i = 0; i < amount; i++) {
+            if(s[i].getName().equalsIgnoreCase(name)) {
+                removeElement(s, i);
+            }
+        }
+    }
+
     public static void memu() {
+        //Quản lí nhiều tủ hồ sơ: 1 tủ hồ sơ gồm: tên, màu sắc và danh sách hồ sơ(Student)
+        //1 hồ sơ gồm id, name, agew, gpa
+        //Có các chức năng: thêm sửa xóa update sắp xếp tủ.
         System.out.println("---------- FPT Academic Portal ----------");
         System.out.println("1.Add shelf.");
         System.out.println("2.Print shelf.");
         System.out.println("3.Search shelf by name.");
         System.out.println("4.Update shelf by name.");
         System.out.println("5.Sort shelf by name");
-        System.out.println("6.Remove shelf.");
-        System.out.println("7.Exit FAP");
+        System.out.println("6.Remove shelf in index.");
+        System.out.println("7.Remove shelf by name.");
+        System.out.println("8.Exit FAP");
         System.out.println("---------- Finish ---------");
         System.out.print("Input choice: ");
     }
-
-    public static int amount = 0;
 
     public static void app(Shelf[] s) {
         while (true) {
@@ -49,8 +68,9 @@ public class UsingShelf {
                 }
 
                 case 2: {
+                    //System.out.printf("%-10s%-20s%-4s%10s", "ID", "Name", "Age", "GPA");
                     for (int i = 0; i < amount; i++) {
-                        System.out.println("---------- Shelf " + (i + 1) + " ----------");
+                        System.out.println("---------- Shelf " + i + " ----------");
                         s[i].output();
                     }
                     break;
@@ -100,10 +120,20 @@ public class UsingShelf {
                 }
 
                 case 6: {
+                    System.out.print("Input postion to remove: ");
+                    int pos = Integer.parseInt(sc.nextLine());
+                    removeElement(s, pos);
                     break;
                 }
 
                 case 7: {
+                    System.out.print("Input name to remove: ");
+                    String name = sc.nextLine();
+                    removeElementByName(s, name);
+                    break;
+                }
+                
+                case 8: {
                     System.out.println("You are exited");
                     System.exit(0);
                     break;
@@ -113,9 +143,6 @@ public class UsingShelf {
     }
 
     public static void main(String[] args) {
-//        Shelf s1 = new Shelf();
-//        s1.input();
-//        s1.output();
         Shelf s[] = new Shelf[500];
         app(s);
     }

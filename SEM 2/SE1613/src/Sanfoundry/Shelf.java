@@ -17,7 +17,7 @@ public class Shelf {
     private String name;
 
     private Scanner sc = new Scanner(System.in);
-    private int amount=500;
+    private int amount = 500;
     private Student[] list = new Student[amount];
 
     public Shelf() {
@@ -64,7 +64,7 @@ public class Shelf {
         amount = Integer.parseInt(sc.nextLine());
 
         for (int i = 0; i < amount; i++) {
-            System.out.println("----- File " + (i + 1) + " ------");
+            System.out.println("----- File " + i + " ------");
             System.out.print("Input id: ");
             String id = sc.nextLine();
             System.out.print("Input name: ");
@@ -74,12 +74,13 @@ public class Shelf {
             System.out.print("Input gpa: ");
             double gpa = Double.parseDouble(sc.nextLine());
             list[i] = new Student(id, namef, age, gpa);
-        } 
+        }
     }
-    
+
     public void output() {
         System.out.println("Color shelf: " + coLor);
         System.out.println("Name shelf: " + name);
+        System.out.printf("%-10s%-20s%-4s%10s", "ID", "Name", "Age", "GPA\n");
         for (int i = 0; i < amount; i++) {
             System.out.println(list[i]);
         }
