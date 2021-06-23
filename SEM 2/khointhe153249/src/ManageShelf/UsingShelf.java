@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Sanfoundry;
+package ManageShelf;
 
 import java.util.Scanner;
 
@@ -83,7 +83,7 @@ public class UsingShelf {
                     for (int i = 0; i < amount; i++) {
                         if (s[i].getName().equalsIgnoreCase(name)) {
                             flag = 1;
-                            pos = i + 1;
+                            pos = i;
                             break;
                         }
                     }
